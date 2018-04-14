@@ -18,9 +18,8 @@ def hello():
     return header + body
 
 
-@application.route("/weather")
-def weather():
-    city = request.args.get('city')
+@application.route("/weather/<city>")
+def weather(city):
     url_string = open_weather_url + "?q=" + city.replace(" ", "+") + "&appid=" + OPENWEATHER_API_KEY
     response = requests.get(url_string)
     data = response.json()
