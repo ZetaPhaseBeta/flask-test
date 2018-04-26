@@ -29,6 +29,12 @@ def weather(city):
     json_string = json.dumps(json_obj)
     return Response(response=json_string, status=200, mimetype="application/json")
 
+@application.route("/vue", methods=['POST'])
+def vue():
+    content = request.get_json()
+    print(content)
+    print(type(content))
+    return "success"
 
 if __name__ == "__main__":
     application.run(host='0.0.0.0', port=80, debug=True)
