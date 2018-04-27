@@ -5,8 +5,10 @@ import urllib.parse
 import requests
 import pprint
 import json
+from flask_cors import CORS
 
 application = Flask(__name__)
+CORS(application)
 
 OPENWEATHER_API_KEY = "37df39e9cf3691f235d7ad2fed75b01b"
 open_weather_url = "http://api.openweathermap.org/data/2.5/weather"
